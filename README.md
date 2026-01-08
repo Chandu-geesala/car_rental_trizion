@@ -1,4 +1,4 @@
-# 🚗 Car Rental App - Trizion Task
+#  Car Rental App - Trizion Task
 
 A modern and elegant Flutter car rental application with complete booking flow, built with Material Design and Provider state management.
 
@@ -41,7 +41,7 @@ Before running this application, ensure you have:
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Chandu-geesala/car_rental_trizion/tree/master
 cd trizon_task
 ```
 
