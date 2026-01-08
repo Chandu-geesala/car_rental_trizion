@@ -2,6 +2,8 @@
 
 A modern and elegant Flutter car rental application with complete booking flow, built with Material Design and Provider state management.
 
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://drive.google.com/file/d/1zpuob6NU9k_SfdahgUpCKEqRlwwUDR7P/view?usp=sharing)
+
 ---
 
 ## 📱 Features
