@@ -1,79 +1,237 @@
+# 🚗 Car Rental App - Trizion Task
 
-***
+A modern and elegant Flutter car rental application with complete booking flow, built with Material Design and Provider state management.
 
-## Project overview
+---
 
-- **Tech stack**: Flutter, Dart.[5]
-- **Platforms**: Android (and iOS if you have Xcode set up).[5]
-- **Main features**:
-    - Welcome/login screen with basic validation.[5]
-    - Home screen with search, car list, and availability badges.[5]
-    - Car detail screen with specs, price, and “Book Now”.[5]
-    - Booking form with validation and date selection.[5]
-    - Confirmation screen summarizing the booking.[5]
+## 📱 Features
 
-***
+- **Welcome Screen** - Login with email validation and guest access
+- **Home Screen** - Browse available cars with search functionality
+- **Car Details** - View detailed specifications, ratings, and pricing
+- **Booking Form** - Fill personal details with validation and date selection
+- **Confirmation** - Review complete booking summary
 
-## Prerequisites
+---
 
-- **Flutter SDK** installed and added to PATH.[5]
-- **Dart** bundled with Flutter (no separate install needed).[5]
-- Android Studio / VS Code with Flutter & Dart plugins recommended.[5]
-- An Android device or emulator; for iOS you need Xcode on macOS.[5]
+## 🛠️ Tech Stack
 
-***
+- **Framework**: Flutter 3.x
+- **Language**: Dart
+- **State Management**: Provider
+- **UI Design**: Material Design with custom Trizion colors
+- **Platform**: Android (iOS ready)
 
-## Setup instructions
+---
 
-1. **Clone or download the project**
-    - Place the project folder (trizon_task) anywhere on your machine.[5]
+## 📋 Prerequisites
 
-2. **Install dependencies**
-    - Open a terminal in the project root and run:[5]
-      ```bash
-      flutter pub get
-      ```
+Before running this application, ensure you have:
 
-***
+- Flutter SDK installed (3.0 or higher)
+- Dart SDK (comes with Flutter)
+- Android Studio or VS Code with Flutter plugins
+- Android emulator or physical device
+- Internet connection (for loading car images)
 
-## How to run the app
+---
 
-1. **Start an emulator or connect a device**
-    - Enable USB debugging on Android and connect via USB, or start an Android emulator from Android Studio.[5]
+## 🚀 Getting Started
 
-2. **From terminal** (in project root):
-   ```bash
-   flutter run
-   ```  
-    - If you have multiple devices, select one from the list shown in the terminal.[5]
+### 1. Clone the Repository
 
-3. **From Android Studio / VS Code**:
-    - Open the project folder.[5]
-    - Select a target device in the device selector.[5]
-    - Click **Run** (▶) to launch.[5]
+```bash
+git clone <repository-url>
+cd trizon_task
+```
 
-The app will start on the **Welcome Screen**, then navigate to **Home**, **Car Details**, **Booking Form**, and **Confirmation** as you interact.[5]
+### 2. Install Dependencies
 
-***
+```bash
+flutter pub get
+```
 
-## Project structure (key files)
+### 3. Run the Application
 
-- `lib/main.dart` – App entry point and MaterialApp setup.[5]
-- `lib/screens/welcome_screen.dart` – Login / guest access screen.[5]
-- `lib/screens/home_screen.dart` – Car listing, search, and app bar with logo/title/logout.[5]
-- `lib/screens/car_detail_screen.dart` – Detailed car view and “Book Now” button.[5]
-- `lib/screens/booking_form_screen.dart` – Booking form with validation and date pickers.[5]
-- `lib/screens/confirmation_screen.dart` – Booking summary and “Back to Home”.[5]
-- `lib/data/mock_data.dart` – Static mock list of cars.[5]
-- `lib/models/car.dart` and `lib/models/booking.dart` – Data models.[5]
-- `lib/providers/booking_provider.dart` – Manages current booking via Provider.[5]
+**For Android Emulator:**
+```bash
+flutter run
+```
 
-***
+**For Physical Device:**
+- Enable USB debugging on your Android device
+- Connect via USB
+```bash
+flutter run
+```
 
-## Common issues & tips
+**For iOS Simulator (macOS only):**
+```bash
+flutter run -d ios
+```
 
-- **Images not loading**:
-    - Check internet permission in AndroidManifest and that each `imageUrl` is a valid `https` URL.[5]
+---
 
-- **Logo not appearing**:
-    - Confirm `assets/logo.png` path and `pubspec.yaml` asset entry, then run `flutter pub get` and restart the app.[5]
+## 📂 Project Structure
+
+```
+trizon_task/
+├── lib/
+│   ├── main.dart                          # App entry point
+│   ├── models/
+│   │   ├── car.dart                       # Car model
+│   │   └── booking.dart                   # Booking model
+│   ├── providers/
+│   │   └── booking_provider.dart          # Booking state management
+│   ├── screens/
+│   │   ├── welcome_screen.dart            # Login/Guest screen
+│   │   ├── home_screen.dart               # Car listing screen
+│   │   ├── car_detail_screen.dart         # Car details screen
+│   │   ├── booking_form_screen.dart       # Booking form screen
+│   │   └── confirmation_screen.dart       # Booking confirmation
+│   └── data/
+│       └── mock_data.dart                 # Mock car data
+├── assets/
+│   └── logo.png                           # App logo
+├── android/
+│   └── app/src/main/AndroidManifest.xml   # Android configuration
+└── pubspec.yaml                           # Dependencies
+```
+
+---
+
+## 🎨 Color Scheme
+
+The app uses **Trizion's brand colors**:
+
+- **Primary**: `#15a89c` (Teal)
+- **Secondary**: `#e8f4f3` (Light Teal)
+- **Text Dark**: `#1a1a1a`
+- **Text Medium**: `#666666`
+- **Background**: `#f5f5f5`
+
+---
+
+## ✅ Key Validations
+
+### Welcome Screen
+- Email format validation (username@domain.com)
+- Password minimum 6 characters
+- Guest access option
+
+### Booking Form
+- Name validation (required)
+- Email format validation
+- Phone number: Exactly 10 digits, numbers only
+- Pickup location validation
+- Date selection for rental period
+
+---
+
+## 📦 Dependencies
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  provider: ^6.0.0
+  cupertino_icons: ^1.0.6
+```
+
+---
+
+## 🔧 Configuration
+
+### Android Internet Permission
+
+The app requires internet permission to load car images. This is already configured in:
+
+**File**: `android/app/src/main/AndroidManifest.xml`
+
+```xml
+<uses-permission android:name="android.permission.INTERNET"/>
+```
+
+### Assets Configuration
+
+**File**: `pubspec.yaml`
+
+```yaml
+flutter:
+  assets:
+    - assets/logo.png
+```
+
+---
+
+## 📱 App Flow
+
+1. **Welcome Screen** → Enter email/password or continue as guest
+2. **Home Screen** → Browse cars, search by name/brand/type
+3. **Car Details** → View specifications and click "Book Now"
+4. **Booking Form** → Fill personal details and select dates
+5. **Confirmation** → Review booking summary and return home
+
+---
+
+## 🏗️ Build Commands
+
+### Debug Build
+```bash
+flutter run
+```
+
+### Release Build (APK)
+```bash
+flutter build apk --release
+```
+
+### Release Build (App Bundle)
+```bash
+flutter build appbundle --release
+```
+
+---
+
+## 🧪 Testing
+
+Run the app on an emulator or device:
+
+```bash
+# List available devices
+flutter devices
+
+# Run on specific device
+flutter run -d <device-id>
+```
+
+---
+
+## 👨‍💻 Development
+
+### Code Organization
+- **Models**: Data structures for Car and Booking
+- **Providers**: State management using Provider package
+- **Screens**: UI screens with Material Design
+- **Data**: Mock data for car listings
+
+### Design Patterns
+- Provider pattern for state management
+- Separation of concerns (Model-View-Provider)
+- Reusable widget components
+
+---
+
+## 📄 License
+
+This project is created for Trizion Technologies task submission.
+
+---
+
+## 🤝 Contributing
+
+For any issues or questions, please reach out to:
+- **Developer**: Chandu Geesala
+
+---
+
